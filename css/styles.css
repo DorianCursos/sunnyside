@@ -20,6 +20,122 @@ ul {
 }
 
 body {
-  margin: 0;
-  font-family: sans-serif;
+  margin: 0 auto;
+  max-width: 1440px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 538px;
+  padding-inline: 24px;
+  background-image: url(../assets/images/mobile/image-header.jpg);
+  background-size: contain;
+}
+
+@media screen and (width >= 768px) {
+  .header {
+    height: 800px;
+    padding-inline: 40px 48px;
+    background-image: url(../assets/images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+
+.header__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+
+@media screen and (width >= 768px) {
+  .header__info {
+    top: 65px;
+    gap: 96px;
+  }
+}
+
+.title {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  letter-spacing: 6.25px;
+  font-size: 40px;
+  color: #fff;
+}
+
+@media screen and (width >= 768px) {
+  .title {
+    font-size: 56px;
+  }
+}
+
+.menu {
+  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: absolute;
+  top: 106px;
+  left: 24px;
+  width: 329px;
+  padding: 39px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.menu::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: linear-gradient(130deg, transparent 50%, #fff 50%);
+  top: -23px;
+  right: 0;
+}
+
+@media screen and (width >= 768px) {
+  .menu {
+    position: absolute;
+    flex-direction: row;
+    top: -10px;
+    left: calc(100% - 467px);
+    background-color: transparent;
+  }
+
+  .menu::after {
+    opacity: 0;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+}
+
+.menu__item {
+  font-size: 20px;
+  line-height: 25px;
+  color: #808397;
+}
+
+@media screen and (width >= 768px) {
+  .menu__item {
+    font-size: 18px;
+    color: #fff;
+  }
 }
